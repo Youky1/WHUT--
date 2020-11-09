@@ -1,0 +1,84 @@
+<!-- 头像 -->
+<view class="avatarContainer">
+	<image src="{{userInfo.avatarUrl}}" class="avatar" mode="aspectFit"/>
+</view>
+
+
+<!-- 信息填写区域 -->
+<form bindsubmit="signUp">
+	<!-- 必填信息 -->
+	<view class="infoHeader">必填信息</view>
+	<view class="message-box">
+		<text class="infoText">昵称</text>
+		<input class="infoInput" type="text" name = "name" placeholder="9个汉字或18个字母以内" />
+	</view>
+	
+	<view class="message-box">
+		<text  class="infoText">性别</text>
+		<picker name="sex" 
+				id="sexIndex"
+				value="{{sexIndex}}" 
+				range="{{sexArray}}" 
+				bindchange="pickerChange"
+				class='box-input'
+				style="line-height:80rpx"
+		>
+			<view>{{sexArray[sexIndex]}}</view>
+		</picker>
+	</view>
+	<view class="message-box">
+		<text  class="infoText">校区</text>
+		<picker name="area"
+				id="areaIndex"
+				value="{{areaIndex}}" 
+				range="{{areaArray}}" 
+				bindchange="pickerChange"
+				class='box-input'
+				style="line-height:80rpx"
+		>
+			<view >{{areaArray[areaIndex]}}</view>
+		</picker>
+	</view>
+
+	<view class="message-box">
+		<text class="infoText">邮箱</text>
+		<input class="infoInput" 
+			   type="text" 
+			   name="schmail" 
+			   placeholder="请使用武理邮箱" 
+			   bindinput="mailInput"
+		/>
+	</view>
+	<view class="message-box">
+		<input class="infoInput" type="text" name = "vcode" placeholder="验证码" />
+		<button bindtap="getVcode" class="vcodeBtn" disabled="{{buttonDisabled}}">获取验证码</button>
+	</view>
+	<navigator url="../guide/guide" class="guide">
+		没有武理邮箱？查看注册教程
+	</navigator>
+	<!-- <view class="message-box">
+		<text class="infoText">手机号授权</text>
+		<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="phoneBtn">
+			同意<text style="margin-left:6rpx" class="iconfont icon-tongyi" wx:if="{{empowered}}"></text>
+		</button>
+	</view> -->
+	<!-- 选填信息 -->
+	<view class="infoHeader">选填信息</view>
+	<view class="message-box">
+		<text class="infoText">手机号</text>
+		<input class="infoInput" type="text" name="phonenum" placeholder="请输入手机号（可选）" />
+	</view>
+	<view class="message-box">
+		<text class="infoText">QQ号</text>
+		<input class="infoInput" type="text" name="qq" placeholder="请输入QQ号（可选）" />
+	</view>
+	<view class="message-box">
+		<text class="infoText">微信号</text>
+		<input class="infoInput" type="text" name="vx" placeholder="请输入微信号（可选）" />
+	</view>
+	<view class="message-box">
+		<text class="infoText">校园卡号</text>
+		<input class="infoInput" type="text" name="schcard" placeholder="请输入校园卡号（可选）" />
+	</view>
+	<button form-type="submit" class="submitBtn">提交注册</button>
+</form>

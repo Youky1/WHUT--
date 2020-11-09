@@ -1,0 +1,64 @@
+/*整体容器*/
+.outContainer{
+        width: 100vw;
+        height: 20vh;
+        display: flex;
+        border: 2rpx solid #000;
+}
+
+/*商品图片*/
+.goodImage{
+        height: 100%;
+        width: 40%;
+}
+
+/*信息显示容器*/
+.goodInfo{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        border-left: 2rpx solid #000;
+}
+
+/*商品名称*/
+.name{
+        height: 8vh;
+        line-height: 8vh;
+        text-align: center;
+        font-size: large;
+        overflow: hidden;
+}
+
+/*行容器*/
+.line{
+        height: 6vh;
+        line-height: 6vh;
+        display: flex;
+        justify-content: space-around;
+        border-top:2rpx solid #000;
+}
+
+/*两种价格的容器*/
+.priceBox{
+        width:40%;
+        display: flex;
+        justify-content: space-around;
+}
+
+/*原价*/
+.originalPrice{
+        font-size: 14px;
+        text-decoration: line-through;
+}
+
+/*现价*/
+.currentPrice{
+        font-size: 18px;
+        color:red;
+}
+
+/*数量*/
+.number{
+        width:30%;
+        color:rgb(245, 164, 42)
+}

@@ -1,0 +1,63 @@
+<view wx:if="{{hasSign}}">
+    <!-- 顶部背景 -->
+    <view class="mine-avatar">
+        <image class="avatar-background" src="../../../img/avatarBackground.png"></image>
+        <image class="avatar-image" src="{{userInfo.avatarUrl}}" />
+        <text class="avatar-nickName">{{userInfo.nickName}}</text>
+        <text class="avatar-descri">{{joinTime + "加入集市"}}</text>
+    </view>
+    <view class="mine-mainMessage">
+        <view class="mainBox">
+            <text class="mainBox-title">校区</text>
+            <text class="mainBox-content">{{location}}</text>
+        </view>
+
+        <view class="mainBox">
+            <text class="mainBox-title">已发布</text>
+            <text class="mainBox-content">{{soldNum}}件</text>
+        </view>
+
+        <view class="mainBox">
+            <text class="mainBox-title">收藏</text>
+            <text class="mainBox-content">{{collectNum}}件</text>
+        </view>
+
+        <view class="mainBox">
+            <text class="mainBox-title">求购中</text>
+            <text class="mainBox-content">{{wantingNum}}件</text>
+        </view>
+    </view>
+    <view class="greyBlank"></view>
+
+    <view class="mine-function">
+        <navigator class="functionBox" url="../mine-publication/mine-publication">
+            <image class="functionBox-image" src="../../../img/mine0.png"></image>
+            <text class="functionBox-text">我发布的</text>
+        </navigator>
+
+        <navigator class="functionBox" url="../mine-collection/mine-collection">
+            <image class="functionBox-image" src="../../../img/mine1.png"></image>
+            <text class="functionBox-text">我收藏的</text>
+        </navigator>
+
+        <navigator style="border: none;" class="functionBox" url="../mine-want/mine-want">
+            <image class="functionBox-image" src="../../../img/mine3.png"></image>
+            <text class="functionBox-text">我求购的</text>
+        </navigator>
+
+    </view>
+    <view class="greyBlank"></view>
+    <!-- 跳转至用户个人资料页面 -->
+    <navigator  url = '../mine-userInfo/mine-userInfo' id="infoBtn">
+            <image id="infoImg" src="../../../img/mine4.png"/>
+            <text id="infoText">个人资料</text>
+    </navigator>
+</view>
+<!-- 跳转到注册页面 -->
+<navigator  url = '../../entry/signUp/signUp' 
+            id="infoBtn" 
+            wx:else
+>
+        <image id="infoImg" src="../../../img/signUp.png"/>
+        <text id="infoText">去注册</text>
+</navigator>

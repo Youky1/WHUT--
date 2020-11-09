@@ -1,0 +1,48 @@
+<form bindsubmit="need" class="main">
+    <view class="main-descri">
+        <view style="border-bottom: none;" class="message-box">
+            <text style="font-size:18px;" class="box-title">求购物品名称</text>
+            <input name="name" 
+                         class="box-input" 
+                         style="margin-top:1.5px;width: 400rpx;" 
+                         maxlength="10" 
+                         placeholder="物品的名称最多八个字哦"
+                         bindinput="bindName"
+                         value="{{name}}"
+            />
+        </view>
+        <textarea name="description" 
+                            maxlength="350" 
+                            class="descri-text" 
+                            placeholder="求购信息越准确越容易找到宝贝哦~\n" 
+                            placeholder-style="color: #9b9b9b;" 
+                            bindinput="bindDescription"
+                            value="{{description}}"
+        />
+        <scroll-view scroll-x="true"    class="descti-inputPhotoArea" >
+            <view class="inImageBox" wx:key="index" wx:for="{{inputImageArray}}">
+                <image class="inImage" src="{{item}}" />
+                <image    class="deleteSign" 
+                                src="../../img/delete.png"
+                                bindtap = "deletePhoto"
+                                data-index = "{{index}}"
+                ></image>
+            </view>
+            <image style="margin-top: 20rpx;" 
+                         wx:if="{{inputImageOff}}" 
+                         class="inImage" 
+                         bindtap="inputPhoto"    
+                         src="../../img/inputImage.png" 
+            />
+            <view style="width:40rpx;display:inline-block;"></view>
+        </scroll-view> 
+        <text style="margin-top:60rpx;font-size:16px;font-weight:bold">图片为可选项哦</text>
+    </view>
+    <button class="message-submitBtn" form-type="submit">发布求购</button>
+</form>
+
+<!-- 
+<view class="greyBlank"></view>
+<text style="font-size:36rpx;margin:30rpx 0 0 30rpx">去看看别人想买什么？</text>
+<navigator class="wishPageBtn" url="../wishPage/wishPage">查看求购信息</navigator> 
+-->

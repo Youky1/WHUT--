@@ -1,0 +1,102 @@
+page{
+    font-size: large;
+}
+scroll-view{
+    height:90vh
+}
+.container{
+    width: 100%;
+    border-bottom: 2rpx solid #777;
+}
+swiper{
+    width: 100%;
+    height: 500rpx;
+}
+.swiperImg{
+    width: 100%;
+    height: 500rpx;
+}
+.title{
+    word-break:break-all;
+    font-size: 56rpx;
+    font-weight: bold;
+    margin:20rpx;
+}
+
+.br{
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    background-color: #ccc;
+    margin: 20rpx 0;
+}
+
+.priceBox{
+    width:70%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30rpx;
+}
+.oriPrice{
+    text-decoration: line-through;
+    font-size: 34rpx;
+}
+.num{
+    width: 50;
+    margin-left: 15rpx;
+    color:rgb(235, 86, 86);
+}
+.description{
+    margin: 50rpx 0;
+    text-indent: 50rpx;
+}
+
+.solderInfo{
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    border: 2rpx #777 solid;
+}
+.avatar{
+    width: 30vw;
+    height: 100%;
+}
+.infoText{
+    margin: 20rpx 50rpx;
+}
+
+/* 底部功能区 */
+.functionBox{
+    position: fixed;
+    bottom: 0;
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+}
+.functionBtn{
+    height: 10vh;
+    width: 25%;
+    background-color: rgb(117, 199, 231);
+    border-right:0.5vw rgb(221, 201, 201) solid ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.functionText{
+    height: 10vh;
+    line-height: 10vh;
+    font-size: 40rpx;
+    color: #fff;
+}
+.functionImg{
+    width: 40%;
+    height: 8vh;
+}
+.collectBtn{
+    position: fixed;
+    bottom:15vh;
+    right: 5vw;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 60rpx;
+}

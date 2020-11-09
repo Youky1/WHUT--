@@ -1,0 +1,25 @@
+.title{
+    height: 50rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 48rpx;
+    margin: 20rpx 0 50rpx;
+}
+.text{
+    margin: 30rpx 0;
+    font-weight: bold;
+}
+.img{
+    width: 100%;
+}
+navigator{
+    width: 50vw;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    background-color: rgb(47,189,253);
+    margin: 30rpx auto;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}

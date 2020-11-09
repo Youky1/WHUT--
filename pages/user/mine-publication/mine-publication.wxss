@@ -1,0 +1,27 @@
+/* 顶部按钮区域 */
+.soldingHeader{
+        height: 10vh;
+        display: flex;
+}
+
+/* 切换按钮 */
+.switchBtn{
+        width: 50%;
+        height: 10vh;
+        line-height: 10vh;
+        text-align: center;
+        border:2rpx solid #000;
+        border-top: none;
+        transition: all 0.5s;
+}
+
+/* 物品展示区域 */
+.goodBox{
+        margin-top:8rpx
+}
+
+/* 空白时的显示 */
+.blankImg{
+        display: block;
+        margin: 0 auto;
+}

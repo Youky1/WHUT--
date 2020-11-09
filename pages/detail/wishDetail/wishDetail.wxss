@@ -1,0 +1,85 @@
+page{
+    font-size: large;
+}
+scroll-view{
+    height:90vh
+}
+
+.container{
+    width: 100%;
+    border-bottom: 2rpx solid #777;
+}
+swiper{
+    width: 100%;
+    height: 500rpx;
+}
+.swiperImg{
+    width: 100%;
+    height: 500rpx;
+}
+
+.title{
+    word-break:break-all;
+    font-size: 56rpx;
+    font-weight: bold;
+    margin:20rpx;
+}
+
+.br{
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    background-color: #ccc;
+    margin: 20rpx 0;
+}
+
+
+.solderInfo{
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    border: 2rpx #777 solid;
+}
+.avatar{
+    width: 30vw;
+    height: 100%;
+}
+.infoText{
+    margin: 20rpx 50rpx;
+}
+
+/* 发布时间 */
+.publishTime{
+    margin: 20rpx 0;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: medium;
+    color: #444;
+}
+
+/* 底部功能区 */
+.functionBox{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+}
+.functionBtn{
+    height: 10vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 10vh;
+    vertical-align: middle;
+    border: 2rpx solid #777;
+    background-color: rgb(117, 199, 231);
+}
+.functionText{
+    height: 10vh;
+    text-align: center;
+    font-size: 52rpx;
+    color: #888;
+}
+.functionImg{
+    width: 70rpx;
+}

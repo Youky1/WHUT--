@@ -1,0 +1,108 @@
+<form bindsubmit="release" class="goodsMessage">
+    <view class="message-descri">
+        <view style="border-bottom: none;" class="message-box">
+            <text style="font-size:18px;" class="box-title">宝贝名称</text>
+            <input name="name" 
+                         class="box-input" 
+                         style="margin-top:1.5px;width: 400rpx;" 
+                         maxlength="10" 
+                         placeholder="给宝贝起个名字吧，最多八个字哦~"
+                         bindinput="bindNameInput"
+                         value="{{nameInput}}"
+            />
+        </view>
+        
+        <textarea name="description"    
+                            maxlength="350" 
+                            class="descri-text" 
+                            placeholder="物品详细描述（照片、细节、型号、购买信息等），有助于快速卖出哦~ "
+                            placeholder-class="plder"
+                            bindinput="bindDescriptionInput"
+                            value="{{descriptionInput}}"
+        />
+        <scroll-view scroll-x="true"    class="descti-inputPhotoArea" >
+            <view class="inImageBox" wx:key="index" wx:for="{{inputImageArray}}">
+                <image class="inImage" src="{{item}}" />
+                <image class="deleteSign" 
+                                src="../../../img/delete.png" 
+                                bindtap = "deletePhoto"
+                                data-index = "{{index}}"
+                ></image>
+            </view>
+            <image style="margin-top: 20rpx;" 
+                         wx:if="{{inputImageOff}}" 
+                         class="inImage" 
+                         bindtap="inputPhoto"    
+                         src="../../../img/inputImage.png" 
+            />
+            <view style="width:40rpx;display:inline-block;"></view>
+        </scroll-view> 
+    </view> 
+    
+    <view class="blank"></view>
+
+    <view class="message-price">
+
+        <view class="message-box infoBox">
+                <view class="priceContainer">
+                    <text class="box-title">原价</text>
+                    <input name="originalPrice" 
+                                 class="priceInput" 
+                                 placeholder="¥0.00" 
+                                 bindinput="bindOriginalPriceInput"
+                                 value="{{originalPriceInput}}"
+                    ></input>
+                </view>
+
+                <view class="priceContainer">
+                        <text class="box-title">售价</text>
+                        <input name="price" 
+                                     class="priceInput" 
+                                     placeholder="¥0.00" 
+                                     bindinput="bindPriceInput"
+                                     value="{{priceInput}}"
+                        ></input>
+                </view>
+        </view>
+
+        <view class="message-box infoBox">
+            <text class="box-title">分类</text>
+            <picker name="cat" 
+                    class="box-input" 
+                    id="sortIndex" 
+                    bindchange="pickerChange" 
+                    value="{{sortIndex}}" 
+                    range="{{sortArray}}"
+            > 
+                <view class="picker">
+                    {{sortArray[sortIndex]}}
+                    <image mode="scaleToFill" class="downSelectImage" src="../../../img/downSelect.png" />
+                </view>
+            </picker>
+        </view>
+
+        <view class="message-box infoBox">
+            <text class="box-title">交易校区</text>
+            <picker name="area" class="box-input" id="locationIndex" bindchange="pickerChange" value="{{locationIndex}}" range="{{locationArray}}">
+                <view class="picker">
+                    {{locationArray[locationIndex]}}
+                    <image mode="scaleToFill" class="downSelectImage" src="../../../img/downSelect.png" />
+                </view>
+            </picker>
+        </view>
+
+        <view class="message-box infoBox">
+            <text class="box-title">物品数量</text>
+            <input type="text" 
+                         class="box-input" 
+                         name="number"
+                         value="{{number}}" 
+                         bindInput="bindNumberInput"
+                         placeholder="请输入物品数量"
+            ></input>
+        </view>
+
+    </view>
+    
+    <button class="message-submitBtn" form-type="submit">发布</button>
+</form>

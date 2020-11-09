@@ -1,0 +1,58 @@
+{
+    "pages": [
+        "pages/entry/index/index",
+        "pages/logs/logs",
+        "pages/entry/signUp/signUp",
+        "pages/entry/guide/guide",
+        "pages/main/main",
+        "pages/release/release",
+        "pages/need/need",
+        "pages/wishPage/wishPage",
+        "pages/user/mine/mine",
+        "pages/user/mine-userInfo/mine-userInfo",
+        "pages/user/mine-want/mine-want",
+        "pages/user/mine-publication/mine-publication",
+        "pages/user/mine-collection/mine-collection",
+        "pages/detail/goodDetail/goodDetail",
+        "pages/detail/wishDetail/wishDetail",
+        "pages/detail/updateGood/updateGood",
+        "pages/detail/updateWish/updateWish"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#45C8DC",
+        "navigationBarTitleText": "二手集市",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#cacaca",
+        "selectedColor": "#2fbdfd",
+        "list": [
+            {
+                "pagePath": "pages/main/main",
+                "text": "首页",
+                "iconPath": "img/mainIcon1.png",
+                "selectedIconPath": "img/mainIcon0.png"
+            },
+            {
+                "pagePath": "pages/release/release",
+                "text": "发布",
+                "iconPath": "img/mainIcon3.png",
+                "selectedIconPath": "img/mainIcon2.png"
+            },
+            {
+                "pagePath": "pages/need/need",
+                "text": "求购",
+                "iconPath": "img/mainIcon5.png",
+                "selectedIconPath": "img/mainIcon4.png"
+            },
+            {
+                "pagePath": "pages/user/mine/mine",
+                "text": "我的",
+                "iconPath": "img/mainIcon7.png",
+                "selectedIconPath": "img/mainIcon6.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

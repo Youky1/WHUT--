@@ -1,0 +1,66 @@
+page {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #ffffff;
+    font-size: 13px;
+}
+.main-descri {
+    height: 450rpx;
+    width: 100%;
+    padding: 45rpx 0 20rpx 5%;
+}
+.descri-text {
+    height: 240rpx;
+    width: 90%;
+    letter-spacing: 1px;
+    font-size: 14px;
+    vertical-align: 17px;
+    line-height: 20px;
+}
+.descti-inputPhotoArea {
+    height: 200rpx;
+    width: 98%;
+    white-space: nowrap;
+}
+.deleteSign {
+    position: relative;
+    height: 40rpx;
+    width: 40rpx;
+    right: 20rpx;
+    bottom: 128rpx;
+}
+.inImageBox {
+    margin: 20rpx 20rpx 0 0rpx;
+    display: inline-block;
+}
+.inImage {
+    height: 150rpx;
+    width: 150rpx;
+    display: inline-block;
+}
+
+.greyBlank {
+    height: 20rpx;
+    background-color: #f1f1f1;
+}
+.main-message {
+    color: #4a4a4a;
+    width: 100%;
+    padding: 45rpx 0 70rpx 5%;
+}
+
+.downSelectImage {
+    height: 30rpx;
+    width: 30rpx;
+    position: absolute;
+    margin-top: 9rpx;
+    margin-left: 16rpx;
+}
+.message-submitBtn {
+    width: 400rpx;
+    margin: 180rpx auto 50rpx;
+    background-color: #42c8fd;
+    color: #ffffff;    
+    border-radius: 50rpx;
+}

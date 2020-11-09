@@ -1,0 +1,10 @@
+<!-- 求购物品展示组件 -->
+<view class="outContainer" bindtap="toWishDetail">
+    <image class="goodImage" src="{{firstPic}}" mode="acceptFill"/>
+    <view class="goodInfo">
+        <view class="name">
+                {{wish.name}}
+        </view>
+        <view class="createTime">发布于 {{wish.cretime}}</view>
+    </view>
+</view>

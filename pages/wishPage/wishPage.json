@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wishItem":"../../components/wishItem/wishItem"
+  }
+}

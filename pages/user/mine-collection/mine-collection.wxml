@@ -1,0 +1,3 @@
+<view wx:for="{{collectionArray}}" wx:key="this">
+        <goodItem good="{{item}}" url="../../detail/goodDetail/goodDetail"></goodItem>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/mine-want/mine-want.wxml-->
+<view wx:for="{{wishArray}}" wx:key="this">
+        <wishItem wish="{{item}}" url="../../detail/wishDetail/wishDetail"></wishItem>
+</view>

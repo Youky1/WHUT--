@@ -1,0 +1,33 @@
+<!-- 切换显示类型的按钮 -->
+<view class="soldingHeader">
+    <view class="switchBtn" 
+                bindtap="chooseSolding" 
+                style="border-top: 6rpx solid {{color1}};font-size:{{size1}}"
+    >出售中</view>
+    <view   class="switchBtn" 
+            bindtap="chooseSoldout" 
+            style="border-top: 6rpx solid {{color2}};font-size:{{size2}}"
+    >已下架</view>
+</view>
+
+<!-- 出售中物品 -->
+<view wx:if="{{goodStatus}}" class="goodBox">
+    <view class="goodContainer" wx:for="{{soldingArray}}" wx:key="this">
+                <goodItem good="{{item}}" url="../../detail/goodDetail/goodDetail"></goodItem>
+    </view>
+    <view wx:if="{{soldingBlank}}">
+                <img src="../../../img/blank.png" class="blankImg"/>
+                <view style="text-align:center">什么也没有哦</view>
+    </view>
+</view>
+
+<!-- 已下架物品区 -->
+<view wx:else class="goodBox">
+    <view class="goodContainer" wx:for="{{soldoutArray}}" wx:key="this">
+                <goodItem good="{{item}}" url="../../detail/goodDetail/goodDetail"></goodItem>
+    </view>
+    <view wx:if="{{soldoutBlank}}">
+                <image src="../../../img/blank.png" class="blankImg"/>
+                <view style="text-align:center">什么也没有哦</view>
+    </view>
+</view>

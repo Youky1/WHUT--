@@ -1,0 +1,13 @@
+<view class="title">简单几步注册你的武理邮箱</view>
+<view class="text">第一步，打开搜索引擎搜索武汉理工大学教务处</view>
+<image class="img" mode="widthFix" src="{{url[0]}}" />
+<view class="text">第二步，点击进入智慧理工大</view>
+<image class="img" mode="widthFix" src="{{url[1]}}" />
+<view class="text">第三步，登录智慧理工大</view>
+<image class="img" mode="widthFix" src="{{url[2]}}" />
+<view class="text">第四步，登录后点击学校邮箱</view>
+<image class="img" mode="widthFix" src="{{url[3]}}" />
+<view class="text">最后一步，填写账号密码，申请自己的邮箱</view>
+<image class="img" mode="widthFix" src="{{url[4]}}" />
+<view class="text">大功告成！</view>
+<navigator url="../signUp/signUp">我明白了</navigator>

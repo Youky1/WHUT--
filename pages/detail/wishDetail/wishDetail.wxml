@@ -1,0 +1,67 @@
+<!--pages/detail/wishDetail/wishDetail.wxml-->
+<scroll-view scroll-y="{{true}}">
+	<!-- 顶部轮播图 -->
+	<view class="container">
+	   <swiper  indicator-dots="true" 
+				autoplay="true" 
+				interval="3000"
+				circular="true"
+		>
+	    	<block wx:for="{{pictures}}" wx:key="this">
+	    		<swiper-item>
+	    			<image src="{{item}}" class="swiperImg"></image>
+	    		</swiper-item>
+	    	</block>
+	   </swiper>
+	</view>
+
+	<!-- 标题 -->
+	<text class="title" selectable>{{wishData.name}}</text>
+
+	<!-- 求购描述 -->
+	<view class="br">求购物品描述：</view>
+	<view class="context">
+		<view class="description">{{wishData.description}}</view>
+		<view class="publishTime">发布于 {{wishData.cretime}}</view>
+	</view>
+
+	<!-- 卖家信息 -->
+	<view class="br">求购发起者信息</view>
+	<view class="solderInfo">
+		<image src="../../../img/avatar.png" class="avatar"/>
+		<view class="box">
+			<view>
+				<text class="infoText">{{solderInfo.name}}</text>
+				<text class="infoText">{{solderInfo.sex}}</text>
+			</view>
+			<view class="infoText">{{solderInfo.area}}</view>
+			<view >
+				<text class="infoText">{{solderInfo.cretime}}</text>
+				<text>来到二手集市</text>
+			</view>
+		</view>
+	</view>
+	<view style="font-weight:bold">联系方式：</view>
+	<view class="infoText"> 
+		<text style="margin-right:40rpx">手机号</text>
+		<text selectable>{{solderInfo.phone}}</text>
+	</view>
+	<view wx:if="{{solderInfo.qq}}" class="infoText">
+		<text style="margin-right:40rpx">QQ号</text>
+		<text selectable>{{solderInfo.qq}}</text>
+	</view>
+	<view wx:if="{{solderInfo.vx}}" class="infoText">
+		<text style="margin-right:40rpx">微信号</text>
+		<text selectable>{{solderInfo.vx}}</text>
+	</view>
+</scroll-view>
+<view class="functionBox">
+	<view class="functionBtn" bindtap="deleteWish">
+		<text class="functionText">删除</text>
+		<image mode="widthFix" src="../../../img/deleteWish.png" class="functionImg"></image>
+	</view>
+	<view class="functionBtn" bindtap="updateWish">
+		<text class="functionText">修改</text>
+		<image mode="widthFix" src="../../../img/updateWish.png" class="functionImg"></image>
+	</view>
+</view>

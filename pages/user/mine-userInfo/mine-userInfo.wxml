@@ -1,0 +1,43 @@
+<view id="box">
+        <view id="basicInfo">
+                <image    id="wxPic" src="{{userInfo.avatarUrl}}" mode="widthFix" />
+                <view id="basicInfoTextContainer">
+                        <view class="basicInfoTextLine">
+                                <text class="basicInfoText">ID</text>
+                                <text class="basicInfoText">{{marketInfo.id}}</text>
+                        </view>
+                        <view class="basicInfoTextLine">
+                                <text class="basicInfoText">姓名</text>
+                                <text class="basicInfoText">{{marketInfo.name}}</text>
+                        </view>
+                        <view class="basicInfoTextLine">
+                                <text class="basicInfoText">性别</text>
+                                <text class="basicInfoText">{{marketInfo.sex}}</text>
+                        </view>
+                </view>
+        </view>
+
+        <view id="contactInfo">
+                <view class="contactInfoLine">
+                        <text class="contactInfoKey">qq</text>
+                        <text class="contactInfoValue">{{marketInfo.qq}}</text>
+                </view>
+                <view class="contactInfoLine">
+                        <text class="contactInfoKey">微信</text>
+                        <text class="contactInfoValue">{{marketInfo.vx}}</text>
+                </view>
+                <view class="contactInfoLine">
+                        <text class="contactInfoKey">手机号</text>
+                        <text class="contactInfoValue">{{marketInfo.phone}}</text>
+                </view>
+                <view class="contactInfoLine">
+                        <text class="contactInfoKey">校园卡号</text>
+                        <text class="contactInfoValue">{{marketInfo.schcard}}</text>
+                </view>
+                <view class="contactInfoLine">
+                        <text class="contactInfoKey">邮箱</text>
+                        <text class="contactInfoValue">{{marketInfo.schmail}}</text>
+                </view>
+        </view>
+        
+</view>

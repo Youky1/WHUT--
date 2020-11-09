@@ -1,0 +1,30 @@
+<!-- 商品展示组件 -->
+<view  class="outContainer"  bindtap="toGoodDetail">
+        <image class="goodImage" src="{{firstPic}}" mode="acceptFill"/>
+        <view class="goodInfo">
+                <view class="name">
+                        {{good.name}}
+                </view>
+
+                <view class="line">
+                        <view class="priceBox">
+                                <text class="originalPrice">{{good.oriprice}}</text>
+                                <text class="currentPrice">{{good.price}}</text>
+                        </view>
+                        <view >
+                                <text style="color:#777">数量：</text>
+                                <text class="number">{{good.amount}}</text>
+                        </view>
+                        
+                </view>
+
+                <view class="line">
+                        <view>
+                                <text style="color:#777">卖家：</text>
+                                <text class="halfText">{{good.uname}}</text>
+                        </view>
+                        
+                        <text class="halfText">{{good.area}}</text>
+                </view>
+        </view>
+</view>

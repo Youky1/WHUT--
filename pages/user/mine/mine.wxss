@@ -1,0 +1,120 @@
+page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #ffffff;
+}
+.mine-avatar {
+    padding-top: 10rpx;
+    height: 260rpx;
+    text-align: center;
+}
+.avatar-background {
+    height: 270rpx;
+    width: 1000rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.avatar-image {
+    height: 120rpx;
+    width: 120rpx;
+    border-radius: 60rpx;
+}
+.avatar-nickName {
+    display: block;
+    font-size: 18px;
+    margin-top: 10rpx;
+    color:#000;
+}
+.avatar-descri {
+    display: block;
+    margin-top: 7rpx;
+    font-size: 14px;
+    color: #7ccee4;
+}
+.mine-mainMessage {
+    display: flex;
+    height: 170rpx;
+    width: 100%;
+    justify-content: space-around;
+}
+.mainBox {
+    height: 60rpx;
+    margin-top: 60rpx;
+    width: 25%;
+    text-align: center;
+    border-right: 1.5px solid #ededed;
+}
+.mainBox-title {
+    margin-top: -20rpx;
+    display: block;
+    font-size: 13px;
+    color: #919191;
+}
+.mainBox-content {
+    margin-top: 20rpx;
+    display: block;
+    font-size: 13px;
+    font-weight: 640;
+    color: #4a4a4a;
+}
+.mine-function {
+    width: 90%;
+    padding: 15rpx 5% 0 5%;
+    color: #353535;
+    font-size: 14px;
+    display: inline-block;
+}
+.functionBox {
+    margin: 10rpx 0 10rpx 0;
+    float: left;
+    height: 90rpx;
+    width: 100%;
+    border-bottom: 1px solid #ededed;
+}
+.functionBox-image {
+    position: absolute;
+    height: 37rpx;
+    width: 37rpx;
+    display: inline-block;
+    margin-top: 13rpx;
+}
+.functionBox-text {
+    display: inline-block;
+    margin: 10rpx 0 10rpx 67rpx;
+    height: 100%;
+    width: 723rpx;
+    font-size: 36rpx;
+}
+
+.mine-personalData {
+    width: 90%;
+    padding: 15rpx 5% 0 5%;
+    color: #353535;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/*跳转按钮*/
+#infoBtn {
+    background-color: #42c8fd;
+    color: #ffffff;    
+    border-radius: 50rpx;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 100rpx auto;
+}
+
+#infoImg{
+    height: 52rpx;
+    width: 52rpx;
+}
+#infoText{
+    font-size: 48rpx;
+}

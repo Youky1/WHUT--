@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "goodItem":"../../../components/goodItem/goodItem"
+    },
+    "navigationBarTitleText": "我收藏的"
+}

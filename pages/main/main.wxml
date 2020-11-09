@@ -1,0 +1,65 @@
+<view class="main">
+	<view class="mainBox" wx:if="{{mainBoxSeen}}">
+		<!-- 搜索栏 -->
+		<view class="main-search">
+			<view class="search-box" >
+				<image class="search-btn" src="../../img/search.png" mode="acceptFit" bindtap="handleSearch"/>
+				<input placeholder="输入名称或关键字" 
+					   class="search-input" 
+					   bindinput="handleSearchInput"
+					   value="{{inform}}"
+				></input>
+			</view>
+		</view>
+
+		<!-- 首页分类区域 -->
+		<view class="main-sort" >
+			<view class="sortLine" wx:for="{{sortArray}}" wx:key="this">
+				<view class="sortItem" 
+					  wx:for="{{item}}" 
+					  wx:for-item="sortItem" 
+					  wx:key="this"
+					  
+				>
+					<text class="{{sortItem.className + ' sortImage'}} " 
+						  data-index="{{sortItem.index}}"
+					  	  bind:tap="handleKindChange"
+					></text>
+					<text class="sortText">{{sortItem.text}}</text>
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- 物品类型选择栏 -->
+	<view class="pickerBox">
+		<text >查看校区：</text>
+		<picker id="locationIndex" 
+				class="goodsPicker" 
+				bindchange="locationChange" 
+				value="{{locationIndex}}" 
+				range="{{locationArray}}"
+		>
+			<view class="picker">
+			    {{locationArray[locationIndex]}}
+			</view>
+		</picker>
+		<text>已选择分类：{{sortArray[sortIndex]}}</text>
+	</view>
+	<!-- 商品展示栏 -->
+	<scroll-view 
+		lower-threshold="100" 
+		scroll-y="true"
+	    bindscrolltolower="loadingGoods"
+		bindscroll="handleScroll"
+	    class="goodsScroll"
+	>
+	
+		<view class="main-goodsBox">
+			<!-- 具体的商品 -->
+			<view wx:for="{{goodsData}}" wx:key="this">
+				<goodItem good="{{item}}" url="../detail/goodDetail/goodDetail"></goodItem>
+			</view>
+		</view>
+	</scroll-view>
+</view>
