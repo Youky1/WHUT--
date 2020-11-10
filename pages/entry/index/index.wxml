@@ -1,7 +1,7 @@
 <view class="container">
+    <image src="../../../img/authorizeBG.png" mode="aspectWidth"/>
     <text class='tip'>请点击下方授权按钮完成授权</text>
     <button open-type="getUserInfo" bindgetuserinfo="getInfo">
         进入集市
-        <text class="iconfont icon-kaishi"></text>
     </button>
 </view>

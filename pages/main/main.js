@@ -10,32 +10,28 @@ Page({
         goodsData: [],
         sortArray: [
             [
-                {index:0,text:'教材书籍',className:'iconfont icon-shuji'}, 
-                {index:1,text:'水卡票卷',className:'iconfont icon-kajuan'}, 
-                {index:2,text:'电子数码',className:'iconfont icon-dianzichanpin'}, 
-                {index:3,text:'生活用品',className:'iconfont icon-shenghuoyongpin'}
-            ], 
-            [
-                {index:4,text:'衣物服饰',className:'iconfont icon-yifu'}, 
-                {index:5,text:'运动健身',className:'iconfont icon-yundongjianshen'}, 
-                {index:6,text:'代步出行',className:'iconfont icon-zihangchedancheqihangjiaotonggongjuxianxing'}, 
-                {index:7,text:'校用电器',className:'iconfont icon-xiyiji'}
+                {index:0, text:'教材书籍', src:'shuji'}, 
+                {index:1, text:'水卡票卷', src:'qia'}, 
+                {index:2, text:'电子数码', src:'shuma'}, 
+                {index:3, text:'生活用品', src:'shenghuoyongpin'}
             ],
             [
-                {index:8,text:'彩妆护肤',className:'iconfont icon-huazhuangpin'}, 
-                {index:9,text:'其他分类',className:'iconfont icon-qita1'}, 
-                {index:10,text:'全部分类',className:'iconfont icon-qita'}, 
-                {index:11,text:'查看求购',className:'iconfont icon-qingqiuhou'}
+                {index:4, text:'衣物服饰', src:'yiwu'}, 
+                {index:5, text:'运动健身', src:'jianshen'}, 
+                {index:6, text:'代步出行', src:'zxc'}, 
+                {index:7, text:'校用电器', src:'dianqi'}
+            ],
+            [
+                {index:8, text:'彩妆护肤', src:'caizhuang'}, 
+                {index:9, text:'其他分类', src:'qita'}, 
+                {index:10,text:'全部分类', src:'category'}, 
+                {index:11,text:'查看求购', src:'icon-beifen'}
             ]
         ],
-        sortIndex:10, // 正在展示的物品种类，10表示全部物品
+        sortNameArray:[],
+        sortIndex:10, // 正在展示的物品种类，默认为10，表示展示全部物品
         locationArray: ['全部','余家头校区','南湖校区','西院','东院','鉴湖校区'],
         locationIndex: 0, // 正在展示的物品的校区，0表示全部校区
-        sortClass:[
-            [],
-            [],
-            []
-        ], // 分类图标的图片url
         deltaY: 0, 
         page: 1,
         mainBoxSeen:true, // 首页顶部区域是否可见，初始可见
@@ -67,46 +63,55 @@ Page({
             })
         })
 
+        let sortNameArray = [];
+        this.data.sortArray.forEach( item => {
+            item.forEach( i => {
+                sortNameArray.push(i.text)
+            })
+        });
+
         this.setData({
             searchStatus:false,
-            inform:''
+            inform:'',
+            sortNameArray
         })
     },
 
-    // 滚动时，隐藏顶部分类区域
-    hiddenSort(e) {
-        if(e.detail.deltaY < -1) {
-            let ant1= wx.createAnimation({
-                duration: 600,
-            })
-            let ant2 = wx.createAnimation({
-                duration: 600,
-            })
-            ant1.height(0).opacity(0.2).step()
-            ant2.height('1130rpx').step()
-            this.setData({
-                changeSort: ant1.export(),
-                changeScroll: ant2.export()
-            })
-        }
-    },
+    // // 滚动时，隐藏顶部分类区域
+    // hiddenSort(e) {
+    //     if(e.detail.deltaY < -1) {
+    //         let ant1= wx.createAnimation({
+    //             duration: 600,
+    //         })
+    //         let ant2 = wx.createAnimation({
+    //             duration: 600,
+    //         })
+    //         ant1.height(0).opacity(0.2).step()
+    //         ant2.height('1130rpx').step()
+    //         this.setData({
+    //             changeSort: ant1.export(),
+    //             changeScroll: ant2.export()
+    //         })
+    //     }
+    // },
 
-    // 滚动到顶部时，显示分类区域
-    showSort(e) {
-        let ant1 = wx.createAnimation({
-            duration: 600,
-        })
-        let ant2 = wx.createAnimation({
-            duration: 600,
-        })
-        ant1.height('48vh').opacity(1).step()
-        ant2.height('830rpx').step()
-        this.setData({
-            changeSort: ant1.export(),
-            changeScroll: ant2.export()
-        })
-    },
+    // // 滚动到顶部时，显示分类区域
+    // showSort(e) {
+    //     let ant1 = wx.createAnimation({
+    //         duration: 600,
+    //     })
+    //     let ant2 = wx.createAnimation({
+    //         duration: 600,
+    //     })
+    //     ant1.height('48vh').opacity(1).step()
+    //     ant2.height('830rpx').step()
+    //     this.setData({
+    //         changeSort: ant1.export(),
+    //         changeScroll: ant2.export()
+    //     })
+    // },
 
+    // 物品显示栏，滚动时判断滚动方向来决定显示或隐藏首部分类区域
     handleScroll(e){
         let p = e.detail.scrollTop;
         // 在向下滑动
@@ -300,9 +305,11 @@ Page({
         })
     },
 
-    // 修改了要查看的校区，商品页page从1开始
-    locationChange(e) {
+    // 修改要查看的校区，商品页page从1开始
+    pickerChange(e) {
+        // 在搜索时不支持更改
         if(this.data.searchStatus) return;
+
         let self = this;
         let index = e.detail.value;
         if(index == 0){ // 选择了全部校区
@@ -402,33 +409,28 @@ Page({
      * 对同一物品分类再次点击，会选中全部商品
      */
     handleKindChange(e){
-        console.log(e)
+        // 在搜索物品时，不支持选择分类
         if(this.data.searchStatus) return;
-        let index = e.target.dataset.index;
-        console.log(index)
-        if(index == 11){// 跳转至求购页面
+
+        let index = e.currentTarget.dataset.index;
+
+        // 点击了同一分类，直接返回
+        if(this.data.sortIndex === index)  return; 
+        // 展示全部物品
+        else if(index === 10){
+            let r = this.requestByTime(1)
+            r.then( goodsData => {
+                this.setData({
+                    goodsData,
+                    sortIndex:index
+                })
+            })
+        }
+        // 跳转至求购页面
+        else if(index === 11){
             wx.navigateTo({
                 url:'../wishPage/wishPage'
             })
-        }
-        else if(this.data.sortIndex === index || index === 10) // 点击了同一分类，查看全部类型的商品
-        {
-            if(this.data.locationIndex === 0){ // 按时间排序
-                let r = this.requestByTime(1);
-                r.then(goodsData => {
-                    this.setData({
-                        goodsData,
-                    })
-                })
-            }
-            else{ // 按校区分类
-                let r = this.requestByLocation(1,this.data.locationArray[this.data.locationIndex]);
-                r.then(goodsData => {
-                    this.setData({
-                        goodsData,
-                    })
-                })
-            }
         }
         else // 点击了不同种类，切换种类
         {

@@ -1,5 +1,5 @@
 <view class="main">
-	<view class="mainBox" wx:if="{{mainBoxSeen}}">
+	<view class="mainHeaderBox" wx:if="{{mainBoxSeen}}">
 		<!-- 搜索栏 -->
 		<view class="main-search">
 			<view class="search-box" >
@@ -13,13 +13,12 @@
 		</view>
 
 		<!-- 首页分类区域 -->
-		<view class="main-sort" >
+		<!-- <view class="main-sort" >
 			<view class="sortLine" wx:for="{{sortArray}}" wx:key="this">
 				<view class="sortItem" 
 					  wx:for="{{item}}" 
 					  wx:for-item="sortItem" 
 					  wx:key="this"
-					  
 				>
 					<text class="{{sortItem.className + ' sortImage'}} " 
 						  data-index="{{sortItem.index}}"
@@ -28,24 +27,86 @@
 					<text class="sortText">{{sortItem.text}}</text>
 				</view>
 			</view>
-		</view>
+		</view> -->
+
+		<!-- 新首页分类区域 -->
+		<swiper indicator-dots="true" 
+				indicator-color="#A1E3ED"
+				indicator-active-color="#fff"
+				class="main-sort"
+		>
+			<swiper-item>
+				<view class="sortLine">
+					<view 	class="sortItem"
+							wx:for="{{sortArray[0]}}"
+							wx:key="this"
+							data-index="{{item.index}}"
+					  	    bind:tap="handleKindChange"
+					>
+						<view class="sortImageContainer">
+							<image src="{{'../../img/' + item.src + '.png'}}" class="sortImage" mode="aspectFit"/>
+						</view>
+						<text class="sortText">{{item.text}}</text>
+					</view>
+				</view>
+				
+				<view class="sortLine">
+					<view 	class="sortItem"
+							wx:for="{{sortArray[1]}}"
+							wx:key="this"
+							data-index="{{item.index}}"
+					  	    bind:tap="handleKindChange"
+					>
+						<view class="sortImageContainer">
+							<image src="{{'../../img/' + item.src + '.png'}}" class="sortImage" mode="aspectFit"/>
+						</view>
+						<text class="sortText">{{item.text}}</text>
+					</view>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="sortLine">
+					<view 	class="sortItem"
+							wx:for="{{sortArray[2]}}"
+							wx:key="this"
+							data-index="{{item.index}}"
+					  	    bind:tap="handleKindChange"
+					>
+						<view class="sortImageContainer">
+							<image src="{{'../../img/' + item.src + '.png'}}" class="sortImage" mode="aspectFit"/>
+						</view>
+						<text class="sortText">{{item.text}}</text>
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
 
 	</view>
-	<!-- 物品类型选择栏 -->
+
+	<!-- 当前查看的物品类别和校区 -->
 	<view class="pickerBox">
-		<text >查看校区：</text>
-		<picker id="locationIndex" 
-				class="goodsPicker" 
-				bindchange="locationChange" 
-				value="{{locationIndex}}" 
-				range="{{locationArray}}"
-		>
-			<view class="picker">
-			    {{locationArray[locationIndex]}}
-			</view>
-		</picker>
-		<text>已选择分类：{{sortArray[sortIndex]}}</text>
+		<!-- 校区 -->
+		<view class="pickerItem">
+			<view >查看校区：</view>
+			<picker id="locationPicker" 
+					class="goodsPicker" 
+					bindchange="pickerChange" 
+					value="{{locationIndex}}" 
+					range="{{locationArray}}"
+			>
+				<view class="picker">
+					{{locationArray[locationIndex]}}
+				</view>
+				<image src="../../img/picker.png" style="width:14px;height:14px;margin-left:10rpx" mode="aspectFit"/>
+			</picker>
+			
+		</view>
+		<!-- 类别 -->
+		<view class="pickerItem">
+			<view>已选择分类：<text class="picker">{{sortNameArray[sortIndex]}}</text></view>
+		</view>
 	</view>
+
 	<!-- 商品展示栏 -->
 	<scroll-view 
 		lower-threshold="100" 
@@ -54,7 +115,6 @@
 		bindscroll="handleScroll"
 	    class="goodsScroll"
 	>
-	
 		<view class="main-goodsBox">
 			<!-- 具体的商品 -->
 			<view wx:for="{{goodsData}}" wx:key="this">

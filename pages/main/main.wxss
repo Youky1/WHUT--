@@ -5,9 +5,9 @@ page, .main {
     font-size: 16px;
 }
 /* 首部总容器 */
-.mainBox{
-    height: 480rpx;
-    background-color: #2fbdfd;
+.mainHeaderBox{
+    height: 460rpx;
+    background-color: #45C8DC;
     padding-top:20rpx;
     transition: all 1s;
 }
@@ -18,7 +18,7 @@ page, .main {
     width: 100%;
 }
 /* 搜索框容器 */
-.search-box {
+.main-search .search-box {
     font-size: 12px;
     margin-left: 30rpx;
     display: flex;
@@ -30,13 +30,13 @@ page, .main {
     text-align: center;
 }
 /* 搜索框输入区 */
-.search-input{
+.main-search .search-box .search-input{
     height: 64rpx;
     width: 80%;
     line-height: 64rpx;
 }
 /* 搜索按钮 */
-.search-btn{
+.main-search .search-box .search-btn{
     width: 9vw;
     height: 58rpx;
     margin-left: 20rpx;
@@ -50,62 +50,85 @@ page, .main {
 }
 /* 每一行的容器 */
 .sortLine{
-    height: 33%;
+    height: 120rpx;
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin: 30rpx 0;
 }
 /* 每一个分类的容器 */
 .sortItem{
     height: 100%;
-    width: 20vw;
+    width: 160rpx;
     display: flex;
     flex-direction: column;
-}
-/* 分类图片 */
-.sortImage {
-    width: 100%;
-    text-align: center;
-    font-size: 80rpx;
-}
-/* 分类文字 */
-.sortText {
-    display: block;
-    color: #000;
-    font-size: 13px;
-    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 商品区域总容器 */
-.main-goodsBox {
-    border-radius: 50rpx;
-    height: 830rpx;
+/* 分类图片的容器 */
+.sortItem .sortImageContainer{
+    width: 80rpx;
+    height: 80rpx;
     background-color: #fff;
+    border-radius: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* 分类图片 */
+.sortItem .sortImageContainer .sortImage {
+    height: 75%;
+    width: 75%;
+}
+/* 分类文字 */
+.sortItem .sortText {
+    margin-top:10rpx;
+    display: block;
+    color: #fff;
+    font-size: 13px;
+}
+
+/* 当前选择物品的信息展示区域 */
 .pickerBox {
-    float: left;
-    margin-left: 50rpx;
+    height: 70rpx;
+    display: flex;
+}
+.pickerBox .pickerItem{
+    height: 70rpx;
+    width: 50vw;
+    display: flex;
+    align-items: center;    
+    vertical-align: center; 
+    justify-content: center; 
 }
 .goodsPicker {
+    height: 100%;
     font-size: 12px;
-    margin: 10px 35px 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.picker{
+    height: 100%;
+    font-size: 28rpx;
+    color: #45C8DC;
     display: inline-block;
 }
 .showingMode{
     font-size: 20rpx;
 }
+
+
+/* 商品滚动区域 */
 .goodsScroll {
     height: 1000rpx;
     background-color: #fff;
 }
-
-/* 返回按钮 */
-.backBtn{
+/* 商品区域总容器 */
+.goodsScroll .main-goodsBox {
+    border-radius: 50rpx;
+    height: 830rpx;
     background-color: #fff;
-    position: fixed;
-    bottom:15vh;
-    right: 5vw;
-    width: 120rpx;
-    height: 120rpx;
-    border-radius: 60rpx;
 }

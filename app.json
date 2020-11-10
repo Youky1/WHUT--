@@ -1,10 +1,11 @@
 {
     "pages": [
+        "pages/main/main",
         "pages/entry/index/index",
         "pages/logs/logs",
         "pages/entry/signUp/signUp",
         "pages/entry/guide/guide",
-        "pages/main/main",
+        
         "pages/release/release",
         "pages/need/need",
         "pages/wishPage/wishPage",
@@ -20,9 +21,9 @@
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#45C8DC",
+        "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "二手集市",
-        "navigationBarTextStyle": "white"
+        "navigationBarTextStyle": "black"
     },
     "tabBar": {
         "color": "#cacaca",
