@@ -126,9 +126,3 @@ page, .main {
     height: 1000rpx;
     background-color: #fff;
 }
-/* 商品区域总容器 */
-.goodsScroll .main-goodsBox {
-    border-radius: 50rpx;
-    height: 830rpx;
-    background-color: #fff;
-}

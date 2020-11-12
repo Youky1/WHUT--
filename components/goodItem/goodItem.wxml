@@ -1,30 +1,21 @@
 <!-- 商品展示组件 -->
 <view  class="outContainer"  bindtap="toGoodDetail">
-        <image class="goodImage" src="{{firstPic}}" mode="acceptFill"/>
-        <view class="goodInfo">
-                <view class="name">
-                        {{good.name}}
-                </view>
-
-                <view class="line">
-                        <view class="priceBox">
-                                <text class="originalPrice">{{good.oriprice}}</text>
-                                <text class="currentPrice">{{good.price}}</text>
-                        </view>
-                        <view >
-                                <text style="color:#777">数量：</text>
-                                <text class="number">{{good.amount}}</text>
-                        </view>
-                        
-                </view>
-
-                <view class="line">
-                        <view>
-                                <text style="color:#777">卖家：</text>
-                                <text class="halfText">{{good.uname}}</text>
-                        </view>
-                        
-                        <text class="halfText">{{good.area}}</text>
-                </view>
+        <!-- 物品图片 -->
+        <image class="goodImage" src="{{firstPic}}" mode="aspectFill"/>
+        <!-- 物品名称 -->
+        <view class="goodName">
+            {{good.name}}
+        </view>
+        <!-- 物品信息 -->
+        <view class="goodInfoBox">
+            <view class="price">￥ {{good.price}}</view>
+            <view class="looked">{{good.views}}人看过</view>
+            <view class="area">{{good.area}}</view>
+        </view>
+        <view class="description">{{good.description}}</view>
+        <!-- 卖家信息 -->
+        <view class="solderInfoBox">
+            <view class="solderAvatar"></view>
+            <view class="solderName">{{good.uname}}</view>
         </view>
 </view>

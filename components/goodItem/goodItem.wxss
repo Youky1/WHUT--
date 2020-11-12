@@ -1,64 +1,75 @@
+/* 保证物品组件可以并排 */
+Page{
+	display: inline-block;
+	text-overflow:ellipsis;
+}
+
 /*整体容器*/
 .outContainer{
-        width: 100vw;
-        height: 20vh;
-        display: flex;
-        border: 2rpx solid #000;
+    width: 46vw;
+    height: 550rpx;
+    display: inline-block;
+	margin: 6rpx 1.5vw;
+	border: 2rpx #000 solid;
+	border-radius: 10rpx;
 }
 
 /*商品图片*/
 .goodImage{
-        height: 100%;
-        width: 40%;
-}
-
-/*信息显示容器*/
-.goodInfo{
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        border-left: 2rpx solid #000;
+	width: 100%;
+	height: 330rpx;
 }
 
 /*商品名称*/
-.name{
-        height: 8vh;
-        line-height: 8vh;
-        text-align: center;
-        font-size: large;
-        overflow: hidden;
+.goodName{
+	height: 40rpx;
+	text-indent: 30rpx;
+	font-weight: bold;
+	color: #030303;
+	font-size: 30rpx;
+	overflow: hidden;
 }
 
-/*行容器*/
-.line{
-        height: 6vh;
-        line-height: 6vh;
-        display: flex;
-        justify-content: space-around;
-        border-top:2rpx solid #000;
+/* 物品信息容器 */
+.goodInfoBox{
+	display: flex;
+	height: 50rpx;
 }
 
-/*两种价格的容器*/
-.priceBox{
-        width:40%;
-        display: flex;
-        justify-content: space-around;
+.goodInfoBox .price{
+	color: red;
+	margin-right: 20rpx;
+	font-size: 18px;
 }
 
-/*原价*/
-.originalPrice{
-        font-size: 14px;
-        text-decoration: line-through;
+.goodInfoBox .looked,.area{
+	line-height: 50rpx;
+	font-size: 10px;
+	color: #999999;
+	vertical-align: bottom;
+	margin-left: 20rpx;
 }
 
-/*现价*/
-.currentPrice{
-        font-size: 18px;
-        color:red;
+/* 物品描述 */
+.description{
+	padding: 0 10rpx;
+	height: 50rpx;
+	color: #999999;
+	font-size: 10px;
+	word-break:break-all;
+	margin:5rpx 0;
 }
 
-/*数量*/
-.number{
-        width:30%;
-        color:rgb(245, 164, 42)
+/* 卖家信息栏 */
+.solderInfoBox{
+	display: flex;
+	width: 24vw;
+	justify-content: space-around;
+	align-items: center;
+}
+.solderAvatar{
+	height: 32rpx;
+	width: 32rpx;
+	border-radius: 16rpx;
+	background-color: #D8D8D8;
 }

@@ -115,11 +115,7 @@
 		bindscroll="handleScroll"
 	    class="goodsScroll"
 	>
-		<view class="main-goodsBox">
-			<!-- 具体的商品 -->
-			<view wx:for="{{goodsData}}" wx:key="this">
-				<goodItem good="{{item}}" url="../detail/goodDetail/goodDetail"></goodItem>
-			</view>
-		</view>
+		<!-- 具体的商品 -->
+		<goodItem wx:for="{{goodsData}}" wx:key="this" good="{{item}}" url="../detail/goodDetail/goodDetail"></goodItem>
 	</scroll-view>
 </view>

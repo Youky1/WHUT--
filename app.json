@@ -32,26 +32,26 @@
             {
                 "pagePath": "pages/main/main",
                 "text": "首页",
-                "iconPath": "img/mainIcon1.png",
-                "selectedIconPath": "img/mainIcon0.png"
+                "iconPath": "img/shouye-yes.png",
+                "selectedIconPath": "img/shouye-yes(1).png"
             },
             {
                 "pagePath": "pages/release/release",
                 "text": "发布",
-                "iconPath": "img/mainIcon3.png",
-                "selectedIconPath": "img/mainIcon2.png"
+                "iconPath": "img/fabu.png",
+                "selectedIconPath": "img/fabu(1).png"
             },
             {
                 "pagePath": "pages/need/need",
                 "text": "求购",
-                "iconPath": "img/mainIcon5.png",
-                "selectedIconPath": "img/mainIcon4.png"
+                "iconPath": "img/gouwu.png",
+                "selectedIconPath": "img/gouwu(1).png"
             },
             {
                 "pagePath": "pages/user/mine/mine",
                 "text": "我的",
-                "iconPath": "img/mainIcon7.png",
-                "selectedIconPath": "img/mainIcon6.png"
+                "iconPath": "img/wode.png",
+                "selectedIconPath": "img/wode(1).png"
             }
         ]
     },
