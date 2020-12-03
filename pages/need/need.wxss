@@ -60,7 +60,7 @@ page {
 .message-submitBtn {
     width: 400rpx;
     margin: 180rpx auto 50rpx;
-    background-color: #42c8fd;
+    background-color: var(--themeColor);
     color: #ffffff;    
     border-radius: 50rpx;
 }
@@ -72,7 +72,7 @@ page {
     text-align: center;
     font-size: 40rpx;
     margin: 50rpx auto;
-    background-color: #42c8fd;
+    background-color: var(--themeColor);
     color: #ffffff;    
     border-radius: 50rpx;
 }

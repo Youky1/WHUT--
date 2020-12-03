@@ -7,7 +7,7 @@ page, .main {
 /* 首部总容器 */
 .mainHeaderBox{
     height: 460rpx;
-    background-color: #45C8DC;
+    background-color:var(--themeColor);
     padding-top:20rpx;
     transition: all 1s;
 }
@@ -37,9 +37,9 @@ page, .main {
 }
 /* 搜索按钮 */
 .main-search .search-box .search-btn{
-    width: 9vw;
-    height: 58rpx;
-    margin-left: 20rpx;
+    width: 52rpx;
+    height: 52rpx;
+    margin: 6rpx 0 0 40rpx;
 }
 
 /* 分类区总容器 */
@@ -113,7 +113,7 @@ page, .main {
 .picker{
     height: 100%;
     font-size: 28rpx;
-    color: #45C8DC;
+    color: var(--themeColor);
     display: inline-block;
 }
 .showingMode{

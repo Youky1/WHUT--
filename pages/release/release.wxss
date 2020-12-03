@@ -52,11 +52,6 @@ page {
     width: 150rpx;
     display: inline-block;
 }
-.priceSwitch {
-    margin-top: -11rpx;
-    color: #2fbdfd;
-    transform: scale(0.8);
-}
 
 .message-contact {
     padding: 45rpx 0 0 5%;
@@ -77,7 +72,7 @@ page {
 .message-submitBtn {
     width: 400rpx;
     margin: 40rpx 0 20rpx 160rpx;
-    background-color: #42c8fd;
+    background-color: var(--themeColor);
     color: #ffffff;    
     border-radius: 50rpx;
 }

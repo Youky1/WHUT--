@@ -1,7 +1,7 @@
 <view wx:if="{{hasSign}}">
     <!-- 顶部背景 -->
     <view class="mine-avatar">
-        <image class="avatar-background" src="../../../img/avatarBackground.png"></image>
+        <!-- <image class="avatar-background" src="../../../img/avatarBackground.png"></image> -->
         <image class="avatar-image" src="{{userInfo.avatarUrl}}" />
         <text class="avatar-nickName">{{userInfo.nickName}}</text>
         <text class="avatar-descri">{{joinTime + "加入集市"}}</text>

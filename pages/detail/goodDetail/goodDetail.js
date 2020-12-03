@@ -11,6 +11,7 @@ Page({
         isMine:false,
         actionNext:'',
         actionUrl:'',
+        sexImg:''
     },
 
     /**
@@ -19,7 +20,6 @@ Page({
     onShow: function (options) {
         let self = this;
         let goodId = wx.getStorageSync('currentGoodid');
-        console.log(goodId)
 
         let p = new Promise((resolve,rejected) => { // 获取物品信息
             wx.request({
@@ -28,7 +28,7 @@ Page({
                     goodId
                 },
                 success(res){
-                    console.log(res.data)
+                    console.log(res)
                     let goodData = res.data.data
                     let pictures = goodData.thumb.split(';');
                     pictures.pop()
@@ -51,6 +51,7 @@ Page({
                             actionUrl:'../../../img/up.png'
                         })
                     }
+                    
                     resolve()
                 }
             })
@@ -60,11 +61,13 @@ Page({
                 wx.request({
                     url:'http://123.57.249.95:8090/secondhand/user/info',
                     data:{
-                        openid:this.data.goodData.userid
+                        userid:self.data.goodData.userid
                     },
                     success(res){
+                        let sexImg = res.data.data.sex === '女' ? '../../../img/woman.png' : '../../../img/man.png'
                         self.setData({
-                            solderInfo:res.data.data
+                            solderInfo:res.data.data,
+                            sexImg
                         })
                         resolve()
                     }

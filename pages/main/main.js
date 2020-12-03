@@ -77,40 +77,6 @@ Page({
         })
     },
 
-    // // 滚动时，隐藏顶部分类区域
-    // hiddenSort(e) {
-    //     if(e.detail.deltaY < -1) {
-    //         let ant1= wx.createAnimation({
-    //             duration: 600,
-    //         })
-    //         let ant2 = wx.createAnimation({
-    //             duration: 600,
-    //         })
-    //         ant1.height(0).opacity(0.2).step()
-    //         ant2.height('1130rpx').step()
-    //         this.setData({
-    //             changeSort: ant1.export(),
-    //             changeScroll: ant2.export()
-    //         })
-    //     }
-    // },
-
-    // // 滚动到顶部时，显示分类区域
-    // showSort(e) {
-    //     let ant1 = wx.createAnimation({
-    //         duration: 600,
-    //     })
-    //     let ant2 = wx.createAnimation({
-    //         duration: 600,
-    //     })
-    //     ant1.height('48vh').opacity(1).step()
-    //     ant2.height('830rpx').step()
-    //     this.setData({
-    //         changeSort: ant1.export(),
-    //         changeScroll: ant2.export()
-    //     })
-    // },
-
     // 物品显示栏，滚动时判断滚动方向来决定显示或隐藏首部分类区域
     handleScroll(e){
         let p = e.detail.scrollTop;
@@ -459,8 +425,10 @@ Page({
 
     // 搜索按钮相应函数
     handleSearch(){
-        console.log('searching')
-        if(!this.data.inform) return;
+        if(!this.data.inform){
+            this.onShow();
+            return;
+        }
         let r = this.requestBySearch(1,this.data.inform);
         r.then(goodsData => {
             this.setData({

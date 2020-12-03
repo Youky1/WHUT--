@@ -1,3 +1,6 @@
+/* 定义系统的主题颜色 */
+page {--themeColor:#45C8DC;}
+
 /*信息类别（联系方式、校区）*/
 .message-title {
     display: inline-block;

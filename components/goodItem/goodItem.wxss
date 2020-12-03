@@ -58,6 +58,7 @@ Page{
 	font-size: 10px;
 	word-break:break-all;
 	margin:5rpx 0;
+	overflow: hidden;
 }
 
 /* 卖家信息栏 */

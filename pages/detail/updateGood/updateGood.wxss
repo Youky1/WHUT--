@@ -77,7 +77,7 @@ page {
 .message-submitBtn {
     width: 400rpx;
     margin: 40rpx 0 20rpx 160rpx;
-    background-color: #42c8fd;
+    background-color: var(--themeColor);
     color: #ffffff;    
     border-radius: 50rpx;
 }

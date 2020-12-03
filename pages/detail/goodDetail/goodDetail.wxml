@@ -1,89 +1,76 @@
-<scroll-view scroll-y="{{true}}">
-	<!-- 顶部轮播图 -->
-	<view class="container">
-	   <swiper  indicator-dots="true" 
-				autoplay="true" 
-				interval="3000"
-				circular="true"
-		>
-	    	<block wx:for="{{pictures}}" wx:key="this">
-	    		<swiper-item>
-	    			<image src="{{item}}" class="swiperImg"></image>
-	    		</swiper-item>
-	    	</block>
-	   </swiper>
-	</view>
+<!-- 顶部轮播图 -->
+<view class="container">
+   <swiper  indicator-dots="true" 
+			autoplay="true" 
+			interval="3000"
+			circular="true"
+	>
+    	<block wx:for="{{pictures}}" wx:key="this">
+    		<swiper-item>
+    			<image src="{{item}}" class="swiperImg"></image>
+    		</swiper-item>
+    	</block>
+   </swiper>
+</view>
 
+<!-- 标题和按钮的行容器 -->
+<view class="titleLine">
 	<!-- 标题 -->
-	<text class="title" selectable>{{goodData.name}}</text>
+	<view class="title" selectable>{{goodData.name}}</view>
+	<!-- 收藏按钮 -->
+	<image src="{{collectUrl}}" mode="widthFix" class="collectBtn" bindtap="collect" />
+</view>
 
-	<!-- 物品信息 -->
-	<view class="br">物品信息</view>
-	<view class="priceBox">
-		原价：<text class="oriPrice">{{goodData.oriprice}}</text>
-		现价：<text class="price">{{goodData.price}}</text>
+<!-- 价格、分类信息、浏览人数 -->
+<view class="priceBox">
+	<text class="currentPrice">{{goodData.oriprice}}</text>
+	<view class="littleFontWord">
+		原价：<text class="originPrice">{{goodData.price}}</text>
 	</view>
-	<view>
-		<text>物品数量：<text class="num">{{goodData.amount}}</text></text>
-		<text style="margin-left:40rpx">{{goodData.cretime}}发布</text>
-	</view>
+	<view class="littleFontWord">{{goodData.area}} | {{goodData.type}}</view>
+	<view class="littleFontWord">{{goodData.views}}人浏览过</view>
+</view>
 
-	<view style="margin-top:50rpx">物品描述：</view>
-	<view class="description">{{goodData.description}}</view>
+<!-- 物品描述 -->
+<view class="description">{{goodData.description}}</view>
 
-	<!-- 卖家信息 -->
+<!-- 数量和发布时间 -->
+<view class="nunberBox">
+	<text class="littleFontWord">物品数量： {{goodData.amount}}</text>
+	<text class="littleFontWord">发布于{{goodData.cretime}}</text>
+</view>
 
-	<view class="br">卖家信息</view>
-	<view class="solderInfo">
-		<image src="../../../img/avatar.png" class="avatar"/>
-		<view class="box">
-			<view >
-				<text class="infoText">{{solderInfo.name}}</text>
-				<text class="infoText">{{solderInfo.sex}}</text>
-			</view>
-			<view class="infoText">{{solderInfo.area}}</view>
-			<view >
-				<text class="infoText">{{solderInfo.cretime}}</text>
-				<text>来到二手集市</text>
-			</view>
+<!-- 卖家信息 -->
+<view class="solderInfoBox">
+	<view class="avatar"></view>
+	<view class="solderInfoRightContainer">
+		<view class="solderNameLine">
+			<text class="solderName">{{solderInfo.name}}</text>
+			<image class="solderSex" src="{{sexImg}}" />
 		</view>
-	</view>
-	<view style="font-weight:bold">联系方式：</view>
-	<view class="infoText"> 
-		<text style="margin-right:40rpx">手机号</text>
-		<text selectable>{{solderInfo.phone}}</text>
-	</view>
-	<view wx:if="{{solderInfo.qq}}" class="infoText">
-		<text style="margin-right:40rpx">QQ号</text>
-		<text selectable>{{solderInfo.qq}}</text>
-	</view>
-	<view wx:if="{{solderInfo.vx}}" class="infoText">
-		<text style="margin-right:40rpx">微信号</text>
-		<text selectable>{{solderInfo.vx}}</text>
-	</view>
-</scroll-view>
-
-<!-- 底部功能栏 -->
-<!-- <view class="functionBox" wx:if="{{isMine}}"> -->
-<view class="functionBox">
-	<view class="functionBtn" bindtap="refresh">
-		<text class="functionText">擦亮</text>
-		<image src="../../../img/refresh.png" mode="widthFix" class="functionImg"  style="height: 8vh;"/>
-	</view>
-	<view class="functionBtn" bindtap="action">
-		<text class="functionText">{{actionNext}}</text>
-		<image src="{{actionUrl}}" mode="widthFix" class="functionImg" style="height: 8vh;"/>
-	</view>
-	
-	<view class="functionBtn" bindtap="update">
-		<text class="functionText">修改</text>
-		<image src="../../../img/update.png" mode="widthFix" class="functionImg"  />
-	</view>
-	<view class="functionBtn" style="border:none;" bindtap="delete">
-		<text class="functionText">删除</text>
-		<image src="../../../img/deleteGood.png" mode="widthFix" class="functionImg"  />
+		<view class="solderContact">联系方式：{{solderInfo.phone}}</view>
 	</view>
 </view>
 
-<!-- 收藏按钮 -->
-<image src="{{collectUrl}}" mode="widthFix" class="collectBtn" bindtap="collect" />
+<!-- 底部功能按钮 -->
+<view class="functionButtonBox">
+	<view class="functionBtn" bindtap="refresh">
+		<image mode="widthFix" class="functionImg" src="../../../img/refresh.png" />
+		<text class="functionText">擦亮</text>
+	</view>
+
+	<view class="functionBtn" bindtap="action">
+		<image mode="widthFix" class="functionImg" src="{{actionUrl}}"/>
+		<text class="functionText">{{actionNext}}</text>
+	</view>
+	
+	<view class="functionBtn" bindtap="update">
+		<image mode="widthFix" class="functionImg" src="../../../img/update.png"  />
+		<text class="functionText">修改</text>
+	</view>
+	
+	<view class="functionBtn" style="border:none;" bindtap="delete">
+		<image mode="widthFix" class="functionImg" src="../../../img/deleteGood.png"  />
+		<text class="functionText">删除</text>
+	</view>
+</view>

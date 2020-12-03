@@ -28,5 +28,5 @@
     width: 320rpx;
     height: 100rpx;
     color: #fff;
-    background-color: #45C8DC;
+    background-color: var(--themeColor);
 }

@@ -8,6 +8,7 @@ page {
     padding-top: 10rpx;
     height: 260rpx;
     text-align: center;
+    background-color: var(--themeColor);
 }
 .avatar-background {
     height: 270rpx;
@@ -99,7 +100,7 @@ page {
 
 /*跳转按钮*/
 #infoBtn {
-    background-color: #42c8fd;
+    background-color: var(--themeColor);
     color: #ffffff;    
     border-radius: 50rpx;
     font-size: 16px;
